@@ -1,69 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keerthan Shetty | ML Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keerthan Shetty | ML Engineer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="profile-text">
-                <h1>Keerthan Shetty</h1>
-                <h2>Machine Learning Engineer | Full-Stack Data Professional</h2>
-                <p><i class="fa-solid fa-location-dot"></i>  Germany</p>
-                <div class="social-links">
-                    <a href="https://github.com/keerthan-m-shetty" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/keerthanmshetty/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://huggingface.co/k10shetty" target="_blank">🤗 Hugging Face</a>
-                </div>
+  <canvas id="canvas"></canvas>
+
+  <div class="container">
+
+    <div class="body_text_2">
+      <img class="mephoto" src="https://avatars.githubusercontent.com/u/keerthan-m-shetty" alt="Keerthan Shetty"/>
+      
+      <div class="social-icons">
+        <a target="_blank" href="https://www.linkedin.com/in/keerthanmshetty/"><i class="fa-brands fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/keerthan-m-shetty"><i class="fa-brands fa-github"></i></a>
+        <a target="_blank" href="https://huggingface.co/k10shetty">🤗</a>
+        <a target="_blank" href="https://hub.knime.com/k10shetty"><i class="fa-solid fa-database"></i></a>
+      </div>
+      
+      <div style="text-align: center; color: #8b949e; font-size: 0.85em;">
+        Last update: April 2026
+      </div>
+      
+      <hr>
+      
+      <h3 style="margin-top:0;">Recommendations</h3>
+      <p style="font-size: 0.9em; color: #8b949e;">From my <a target="_blank" href="https://www.linkedin.com/in/keerthanmshetty/">LinkedIn profile</a>.</p>
+      
+      <div id="reviewSlideshow" class="review-slideshow">
+        <div class="review-content" style="opacity: 0;">
+          <div class="review-author">
+            <img src="" alt="Author" id="review-img">
+            <div class="review-author-info">
+              <span class="review-author-name" id="review-name"></span>
+              <span class="review-author-role" id="review-role"></span>
             </div>
+          </div>
+          <p class="review-text" id="review-text"></p>
         </div>
-    </header>
+      </div>
+    </div>
 
-    <main class="container">
-        <section id="about">
-            <h3>About Me</h3>
-            <p>I specialize in building intelligent systems and deploying scalable AI solutions. With a unique full-stack data background spanning Data Engineering, Analysis, and Machine Learning, I build the end-to-end infrastructure that feeds modern LLMs. I am actively looking for full-time opportunities.</p>
-        </section>
+    <div class="body_text">
+      <h1 style="margin-bottom: 5px;">Keerthan Shetty</h1>
+      <h3 style="margin-top: 0; color: #8b949e;">Machine Learning Engineer // Full-Stack Data Professional</h3>
+      
+      <p>
+        <b>Keywords</b>: <i>Machine Learning</i>; <i>Data Engineering</i>; <i>LLMs</i>; <i>KNIME</i>; <i>Python</i>; <i>PyTorch</i>; <i>Docker</i>; <i>XAI</i>...
+      </p>
+      <hr>
 
-        <section id="projects">
-            <h3>Featured Engineering Work</h3>
-            
-            <div class="project-card">
-                <div class="project-header">
-                    <h4>🚀 Resume Skill Extractor (Llama 3 8B)</h4>
-                    <a href="https://github.com/keerthan-m-shetty/resume-skill-extractor" class="btn" target="_blank">View Code</a>
-                </div>
-                <div class="tech-tags">
-                    <span>PyTorch</span><span>Hugging Face</span><span>QLoRA</span><span>Gradio</span>
-                </div>
-                <p><strong>What:</strong> An end-to-end LLM pipeline that extracts core responsibilities and technical skills from unstructured job descriptions.</p>
-                <p><strong>How:</strong> Curated 3,000+ records via Gemini 1.5 API, fine-tuned <code>Meta-Llama-3-8B-Instruct</code> using QLoRA (4-bit) on an L4 GPU, and mathematically merged the weights for serverless deployment.</p>
-                <p><strong>Result:</strong> Eliminated the manual effort of tailoring resumes by providing candidates with instant, highly accurate lists of required skills.</p>
-            </div>
+      <p><b>TL;DR</b>: I specialize in building intelligent systems and scalable data pipelines. I spent over 4 years at <a target="_blank" href="https://knime.com">KNIME</a> architecting community data migrations, automating analytics workflows, and writing about Explainable AI (XAI). I also build and fine-tune open-source LLMs.</p>
 
-            <div class="project-card">
-                <div class="project-header">
-                    <h4>🐳 Docker ML API Hub</h4>
-                    <a href="https://github.com/keerthan-m-shetty/docker-ml-api-hub" class="btn" target="_blank">View Code</a>
-                </div>
-                <div class="tech-tags">
-                    <span>Docker</span><span>FastAPI</span><span>Python</span><span>REST</span>
-                </div>
-                <p><strong>What:</strong> A containerized environment for running and interacting with machine learning models.</p>
-                <p><strong>How:</strong> Packaged ML environments using Docker and exposed model inference capabilities via REST APIs.</p>
-                <p><strong>Result:</strong> Streamlined the deployment process, allowing applications to interact with ML models reliably across any environment.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© 2026 Keerthan Shetty. Built with HTML & CSS.</p>
+      <br>
+      <p>Highlights at KNIME (Mar 2022 - Mar 2026)..</p>
+      <fieldset class="majorpoints">
+        <legend class="majorpointslegend"> &#9658; Expand </legend>
+        <div class="hiders" style="display:none;">
+          <ul>          
+            <li>
+              <b>Explainable AI (XAI):</b> Co-authored and published the technical booklet <i>"Explainable AI: Interpreting Machine Learning with XAI."</i> Created a dedicated XAI space developing workflows and authored in-depth blog posts on advanced interpretability methods (LIME, SHAP, PDP).
+            </li>
+            <li>
+              <b>Platform Migration Architecture:</b> Led an end-to-end community platform migration from Discourse to Circle. Developed a custom KNIME/REST API pipeline to extract posts, nested replies, and user engagement metrics, managing media migration via Amazon S3.
+            </li>
+            <li>
+              <b>Cross-Platform Data Pipelines:</b> Built an automated multi-channel community monitoring system using Python and KNIME to aggregate mentions across Reddit, Discord, and Stack Overflow, routing them to Slack for faster response times.
+            </li>
+            <li>
+              <b>Workflow Automation:</b> Designed an automated weekly reporting workflow that aggregated data from multiple sources, reducing manual processing time by ~3 hours per month.
+            </li>
+          </ul>
         </div>
-    </footer>
+      </fieldset>
+
+      <br>
+      <p>Independent ML Engineering..</p>
+      <fieldset class="majorpoints">
+        <legend class="majorpointslegend"> &#9658; Expand </legend>
+        <div class="hiders" style="display:none;">
+          <ul> 
+            <li>
+              <b>Resume Skill Extractor (Llama 3 8B):</b> Built an end-to-end LLM pipeline to extract core skills from job descriptions. Curated a 3,000+ dataset via Gemini API, fine-tuned `Meta-Llama-3-8B-Instruct` using QLoRA, and deployed a mathematically merged serverless backend.
+            </li>
+            <li>
+              <b>Docker ML API Hub:</b> Packaged ML environments using Docker and exposed model inference capabilities via REST APIs using FastAPI, allowing seamless integration for front-end applications.
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="body_text_3">
+      <h2 style="margin-top:0;">Articles & Papers</h2>
+      <fieldset class="majorpoints">
+        <legend class="majorpointslegend"> &#9658; Expand </legend>
+        <div class="hiders" style="display:none;">
+          <ul>
+            <li>
+              <b>Booklet:</b> <a target="_blank" href="https://www.knime.com/knimepress/explainable-ai">Explainable AI: Interpreting Machine Learning with XAI</a> (KNIME Press)
+            </li>
+            <li>
+              <b>Articles:</b> Authored deep-dive technical posts on LIME, SHAP, Shapley Values, and Partial Dependence Plots (PDP) for the KNIME Blog.
+            </li>
+          </ul>
+        </div>
+      </fieldset>
+
+      <hr>
+      <h2>Tech Stack</h2>
+      <div style="text-align: left; margin-top: 10px;">
+        <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn" style="margin-bottom: 5px;"/><br>
+        <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,fastapi" style="margin-bottom: 5px;"/><br>
+        <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,gcp" />
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    // --- UI Interactions ---
+    $(document).ready(function() {
+      $('.majorpointslegend').click(function() {
+        $(this).next('.hiders').slideToggle("fast");
+        var text = $(this).text();
+        $(this).html(text.includes("►") ? "&#9660; Collapse" : "&#9658; Expand");
+      });
+    });
+
+    // --- LinkedIn Reviews Data & Logic ---
+    const reviewsData = [
+      {
+        author: "Schalk Gerber",
+        role: "Community Team Lead at KNIME",
+        content: "Keerthan proved himself to be a very dependable employee and a hard worker with a wide range of professional knowledge. He pitched innovative ideas at company meetings and was valued by managers and colleagues alike for his exceptionally competent manner.",
+        profile_image_link: "https://ui-avatars.com/api/?name=Schalk+Gerber&background=random"
+      },
+      {
+        author: "Katrin Koch",
+        role: "Director HR at KNIME",
+        content: "Of particular value to us was Keerthan's work which was characterized by the highest diligence and care. He was a fast-learner, very careful and cautious about his work, and successfully completed all assigned tasks to our fullest satisfaction.",
+        profile_image_link: "https://ui-avatars.com/api/?name=Katrin+Koch&background=random"
+      }
+    ];
+
+    let currentReviewIndex = 0;
+    function updateReview() {
+      const reviewContent = document.querySelector('.review-content');
+      reviewContent.style.opacity = 0;
+      
+      setTimeout(() => {
+        const review = reviewsData[currentReviewIndex];
+        document.getElementById('review-img').src = review.profile_image_link;
+        document.getElementById('review-name').textContent = review.author;
+        document.getElementById('review-role').textContent = review.role;
+        document.getElementById('review-text').textContent = `"${review.content}"`;
+        
+        reviewContent.style.opacity = 1;
+        currentReviewIndex = (currentReviewIndex + 1) % reviewsData.length;
+      }, 500);
+    }
+    
+    updateReview();
+    setInterval(updateReview, 8000);
+
+    // --- Interactive Canvas Background ---
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let mouseX = 0, mouseY = 0;
+    const circles = [];
+    const circleRadius = 2.5; 
+    const circleCount = 600; 
+
+    // Deep techy blues and purples
+    const colorSequence = ['#1f6feb', '#58a6ff', '#8957e5', '#238636', '#2ea043'];
+    let colorIndex = 0;
+    let transitionProgress = 0;
+    const transitionSpeed = 0.005;
+
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    function hexToRgb(hex) {
+        const bigint = parseInt(hex.slice(1), 16);
+        return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+    }
+
+    function interpolateColor(color1, color2, factor) {
+        const result = color1.slice();
+        for (let i = 0; i < 3; i++) {
+            result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+        }
+        return result;
+    }
+
+    function getCurrentColor() {
+        const currentColor = hexToRgb(colorSequence[colorIndex]);
+        const nextColor = hexToRgb(colorSequence[(colorIndex + 1) % colorSequence.length]);
+        const interpolated = interpolateColor(currentColor, nextColor, transitionProgress);
+        return `rgba(${interpolated[0]}, ${interpolated[1]}, ${interpolated[2]}, 0.3)`;
+    }
+
+    class Particle {
+      constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.velocity = { x: (Math.random() - 0.5) * 0.8, y: (Math.random() - 0.5) * 0.8 };
+          this.rotation = Math.random() * Math.PI * 2;
+      }
+      draw() {
+          ctx.save();
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.rotation);
+          ctx.beginPath();
+          ctx.moveTo(0, -circleRadius * 2);
+          ctx.lineTo(circleRadius * 2, circleRadius * 2);
+          ctx.lineTo(-circleRadius * 2, circleRadius * 2);
+          ctx.closePath();
+          ctx.fillStyle = getCurrentColor();
+          ctx.fill();
+          ctx.restore();
+      }
+      update() {
+          this.x += this.velocity.x;
+          this.y += this.velocity.y;
+          this.rotation += 0.01;
+
+          if (this.x > width || this.x < 0) this.velocity.x = -this.velocity.x;
+          if (this.y > height || this.y < 0) this.velocity.y = -this.velocity.y;
+
+          const dx = mouseX - this.x;
+          const dy = mouseY - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+              this.x -= dx * 0.02;
+              this.y -= dy * 0.02;
+          }
+          this.draw();
+      }
+    }
+
+    function createParticles() {
+        for (let i = 0; i < circleCount; i++) {
+            circles.push(new Particle(Math.random() * width, Math.random() * height));
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        circles.forEach(circle => circle.update());
+
+        transitionProgress += transitionSpeed;
+        if (transitionProgress >= 1) {
+            transitionProgress = 0;
+            colorIndex = (colorIndex + 1) % colorSequence.length;
+        }
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+
+    resizeCanvas();
+    createParticles();
+    animate();
+  </script>
 </body>
 </html>
