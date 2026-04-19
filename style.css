@@ -1,11 +1,11 @@
-/* --- Academic / Raw HTML Theme (White & Dark Blue) --- */
+/* --- Academic Theme (White & Dark Blue) --- */
 
 :root {
-  --primary-blue: #003366; /* Deep, professional dark blue */
+  --primary-blue: #003366; 
   --text-main: #222222;
   --text-muted: #555555;
   --bg-color: #FFFFFF;
-  --panel-bg: rgba(255, 255, 255, 0.92); /* Very slight transparency for canvas overlay */
+  --panel-bg: rgba(255, 255, 255, 0.75); /* Highly transparent so the globe shows through */
 }
 
 body {
@@ -17,12 +17,26 @@ body {
   color: var(--text-main);
 }
 
+/* THE CSS GLOBE/SUN EFFECT */
+.background-globe {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  /* Creates a soft, dark-blue fading gradient matching the theme */
+  background: radial-gradient(circle, rgba(0, 51, 102, 0.08) 0%, rgba(0, 51, 102, 0) 70%);
+  z-index: 0;
+  pointer-events: none; /* Ensures you can still click things behind/through it */
+}
+
 canvas {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1; /* Below content, above body background */
+  z-index: 1; 
 }
 
 .container {
@@ -48,33 +62,11 @@ hr {
   border: 0;
   border-top: 1px solid #E0E0E0;
   margin: 1.5em 0;
-  padding: 0; 
 }
 
-/* Headings */
-h1 {
-  font-size: 2.4em;
-  margin-bottom: 0.2em;
-  color: #111111;
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 1.4em;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-  color: #111111;
-  border-bottom: 1px solid #EEEEEE;
-  padding-bottom: 4px;
-}
-
-h3 {
-  font-size: 1.05em;
-  font-weight: normal;
-  color: var(--text-muted);
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-}
+h1 { font-size: 2.4em; margin-bottom: 0.2em; color: #111111; letter-spacing: -0.02em; }
+h2 { font-size: 1.4em; margin-top: 1.2em; margin-bottom: 0.5em; color: #111111; border-bottom: 1px solid #EEEEEE; padding-bottom: 4px; }
+h3 { font-size: 1.05em; font-weight: normal; color: var(--text-muted); margin-top: 0.2em; margin-bottom: 0.2em; }
 
 /* Layout Columns */
 div.body_text, div.body_text_2, div.body_text_3 {
@@ -86,97 +78,55 @@ div.body_text, div.body_text_2, div.body_text_3 {
   padding-left: 2.5%;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
-  box-sizing: border-box; /* CRITICAL: Stops padding from expanding the columns */
+  box-sizing: border-box;
 }
 
-div.body_text_2 { /* Left Column */
-  left: 4%;
-  width: 26%;
-  top: 1%;
-}
+div.body_text_2 { left: 4%; width: 26%; top: 1%; } /* Left */
+div.body_text { left: 33%; width: 38%; top: 1%; }  /* Middle */
+div.body_text_3 { left: 74%; width: 22%; top: 1%; } /* Right */
 
-div.body_text { /* Middle Column */
-  left: 33%;
-  width: 38%;
-  top: 1%;
-}
-
-div.body_text_3 { /* Right Column */
-  left: 74%;
-  width: 22%;
-  top: 1%;
-}
-
-/* Left Column Specifics */
+/* Profile Photo (Reverted to Paolo's original rectangle format) */
 .mephoto {
-  width: 100%;             /* Fills the column width */
-  max-width: 250px;        /* Limits max size so it doesn't get too huge */
-  height: auto;            /* Keeps your natural aspect ratio */
+  width: 80%;
+  max-width: 220px;
   display: block;
-  margin-bottom: 20px;
-  border: 1px solid #E0E0E0;
+  margin-bottom: 15px;
 }
 
-i.fa-brands, i.fa-solid {
-  font-size: 1.3em;
-  color: var(--primary-blue);
-  margin-right: 8px;
+/* Social Link Images */
+.social-links {
+  font-size: 1.2em;
+  color: #999; /* Color for the | separator */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-i.fa-brands:hover, i.fa-solid:hover {
-  opacity: 0.8;
+.social-links img {
+  height: 28px; /* Sizes the images perfectly */
+  vertical-align: middle;
+  margin: 0 4px;
+  transition: transform 0.2s ease;
 }
 
-/* Collapsible Sections (Fieldsets) */
+.social-links img:hover {
+  transform: scale(1.1); /* Adds a subtle zoom when hovered */
+}
+
+/* Collapsible Sections */
 .majorpointslegend {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   color: var(--primary-blue);
   font-weight: bold;
   cursor: pointer;
 }
 
-.majorpointslegend:hover {
-  text-decoration: underline;
-}
+.majorpointslegend:hover { text-decoration: underline; }
+fieldset { border: 0 none; margin-top: 10px; padding: 0; }
+div.hiders { font-size: 95%; color: var(--text-muted); }
+div.hiders ul { padding-left: 20px; }
+div.hiders li { margin-bottom: 12px; }
 
-fieldset {
-  border: 0 none;
-  margin-top: 10px;
-  padding: 0;
-}
-
-div.hiders {
-  font-size: 95%;
-  color: var(--text-muted);
-}
-div.hiders ul {
-    padding-left: 20px;
-}
-div.hiders li {
-    margin-bottom: 12px;
-}
-div.background_div {
-  z-index: 0;
-  position: fixed; /* Keeps it anchored while you scroll */
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  opacity: 0.8; /* Adjust this to make the sun brighter or softer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.background_div img {
-  width: 100%;
-  max-width: 1200px; /* Keeps the sun from getting too stretched on huge monitors */
-  height: auto;
-  object-fit: contain;
-}
 /* Reviews Section */
 .review-slideshow {
   max-width: 100%;
@@ -185,48 +135,19 @@ div.background_div {
   background-color: #F9F9F9;
   border-left: 4px solid var(--primary-blue);
 }
+.review-content { transition: opacity 0.5s ease-in-out; }
+.review-author { margin-bottom: 8px; display: flex; align-items: center;}
+.review-author img { width: 45px; height: 45px; border-radius: 50%; margin-right: 10px; border: 1px solid #ccc; object-fit: cover;}
+.review-author-info { display: flex; flex-direction: column; }
+.review-author-name { font-weight: bold; color: var(--primary-blue); }
+.review-author-role { font-size: 0.85em; color: var(--text-muted); }
+.review-text { font-style: italic; font-size: 0.95em; line-height: 1.5; margin: 0; color: var(--text-main); }
 
-.review-content {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.review-author {
-  margin-bottom: 8px;
-}
-
-.review-author-name {
-  font-weight: bold;
-  color: var(--primary-blue);
-}
-
-.review-author-role {
-  font-size: 0.85em;
-  color: var(--text-muted);
-}
-
-.review-text {
-  font-style: italic; 
-  font-size: 0.95em;
-  line-height: 1.5;
-  margin: 0;
-  color: var(--text-main);
-}
-
-/* Responsive design for tablets and mobile devices */
 @media (max-width: 1024px) {
   div.body_text, div.body_text_2, div.body_text_3 {
-  height: 100%;
-  position: absolute;
-  z-index: 10;
-  background-color: transparent; /* CRITICAL: Allows triangles and sun to show through */
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-  box-sizing: border-box; 
-}
-  .container {
-      height: auto;
-      padding-bottom: 50px;
+      position: relative; width: 90%; left: 5%; top: auto; margin-top: 20px; height: auto; 
+      background-color: rgba(255, 255, 255, 0.95);
   }
+  .container { height: auto; padding-bottom: 50px; }
+  .background-globe { display: none; } /* Hide on mobile to save space */
 }
