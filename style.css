@@ -25,8 +25,8 @@ body {
   width: 1000px;
   height: 1000px;
   border-radius: 50%;
-  /* Increased opacity from 0.08 to 0.15 so the dark blue glow is clearly visible */
-  background: radial-gradient(circle, rgba(0, 51, 102, 0.15) 0%, rgba(0, 51, 102, 0) 70%);
+  /* Increased opacity from 0.08 to 0.25 so the dark blue glow is clearly visible */
+  background: radial-gradient(circle, rgba(0, 51, 102, 0.25) 0%, rgba(0, 51, 102, 0) 70%);
   z-index: 0;
   pointer-events: none; 
 }
