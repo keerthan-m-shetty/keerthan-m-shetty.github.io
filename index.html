@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keerthan Shetty's website</title>
   
+  <link rel="icon" href="media/icon.svg" type="image/svg+xml">
+  
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,7 +17,7 @@
   <div class="container">
     
     <div class="body_text_2">
-      <img class="mephoto" id="imageCycle" src="me.JPG" ondragstart="return false;" ondrop="return false;" onerror="this.style.display='none';"/>
+      <img class="mephoto" id="imageCycle" src="media/me.JPG" ondragstart="return false;" ondrop="return false;" onerror="this.style.display='none';"/>
       
       <h2>
         <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty"><i class="fa-brands fa-linkedin"></i></a>
@@ -34,7 +36,8 @@
       
       <div id="reviewSlideshow" class="review-slideshow">
         <div class="review-content" id="reviewContent">
-          <div class="review-author">
+          <div class="review-author" style="display: flex; align-items: center; margin-bottom: 8px;">
+            <img id="rev-img" src="" alt="Author" style="width: 45px; height: 45px; border-radius: 50%; margin-right: 12px; display: none; border: 1px solid #E0E0E0;" onerror="this.style.display='none'">
             <div class="review-author-info">
               <span class="review-author-name" id="rev-name"></span><br>
               <span class="review-author-role" id="rev-role"></span>
@@ -176,27 +179,63 @@
       });
     });
 
-    // --- LinkedIn Reviews ---
-    const reviews = [
-      { author: "Schalk Gerber", role: "Community Team Lead, KNIME", content: "Keerthan proved to be a very dependable employee and a hard worker with a wide range of professional knowledge and a high degree of self-initiative and commitment." },
-      { author: "Katrin Koch", role: "Director HR, KNIME", content: "He pitched innovative ideas at company meetings, but also listened to what others had to say. Keerthan was valued by managers and colleagues alike for his friendly and exceptionally competent manner." },
-      { author: "KNIME GmbH", role: "Letter of Recommendation", content: "Of particular value to us was Keerthan's work, characterized by the highest diligence and care. He completed the assigned tasks always to our fullest satisfaction." }
-    ];
-
+    // --- JSON Fetch Logic for LinkedIn Reviews ---
+    let reviews = [];
     let revIdx = 0;
+
+    async function loadReviews() {
+      try {
+        const response = await fetch('Recommendations.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        reviews = data.review;
+        
+        if (reviews && reviews.length > 0) {
+          cycleReviews(); // Run immediately on load
+          setInterval(cycleReviews, 8000); // Then cycle every 8 seconds
+        }
+      } catch (error) {
+        console.error('Failed to load reviews:', error);
+        document.getElementById('reviewContent').innerHTML = "<p class='review-text'><i>Recommendations currently unavailable. Please view them on my LinkedIn profile.</i></p>";
+      }
+    }
+
     function cycleReviews() {
       const el = document.getElementById('reviewContent');
       el.style.opacity = 0;
+      
       setTimeout(() => {
-        document.getElementById('rev-name').textContent = reviews[revIdx].author;
-        document.getElementById('rev-role').textContent = reviews[revIdx].role;
-        document.getElementById('rev-text').textContent = `"${reviews[revIdx].content}"`;
+        const rev = reviews[revIdx];
+        
+        // 1. Handle Profile Image
+        const imgEl = document.getElementById('rev-img');
+        if (rev.profile_image_link) {
+            imgEl.src = rev.profile_image_link;
+            imgEl.style.display = 'block';
+        } else {
+            imgEl.style.display = 'none';
+        }
+
+        // 2. Handle Name and Hyperlink
+        const nameEl = document.getElementById('rev-name');
+        if (rev.author_link) {
+            nameEl.innerHTML = `<a target="_blank" href="${rev.author_link}" style="color: var(--primary-blue);">${rev.author}</a>`;
+        } else {
+            nameEl.textContent = rev.author;
+        }
+
+        // 3. Handle Role and Content
+        document.getElementById('rev-role').textContent = rev.role;
+        document.getElementById('rev-text').textContent = `"${rev.content}"`;
+        
         el.style.opacity = 1;
         revIdx = (revIdx + 1) % reviews.length;
       }, 500);
     }
-    cycleReviews();
-    setInterval(cycleReviews, 8000);
+
+    // Initialize the fetch
+    loadReviews();
 
     // --- Triangle Canvas Background (Dark Blue Theme) ---
     const canvas = document.getElementById('canvas');
@@ -206,9 +245,7 @@
     const circleRadius = 2.5; 
     const circleCount = 800; 
     
-    // Varying shades of dark/slate blue for the particles
     const colorSequence = ['#003366', '#004080', '#1a5276', '#2980b9', '#3498db', '#5dade2'];
-    
     let colorIndex = 0, transitionProgress = 0, transitionSpeed = 0.002;
 
     function resizeCanvas() {
@@ -227,7 +264,6 @@
         const c1 = hexToRgb(colorSequence[colorIndex]);
         const c2 = hexToRgb(colorSequence[(colorIndex + 1) % colorSequence.length]);
         const intp = interpolateColor(c1, c2, transitionProgress);
-        // Reduced opacity so the dark blue isn't overwhelming
         return `rgba(${intp[0]}, ${intp[1]}, ${intp[2]}, 0.3)`; 
     }
 
