@@ -109,14 +109,12 @@ div.body_text_3 { /* Right Column */
 
 /* Left Column Specifics */
 .mephoto {
-  width: 160px;             /* Forces a specific width */
-  height: 160px;            /* Forces an equal height for a perfect square */
-  border-radius: 50%;       /* Turns the square into a perfect circle */
-  object-fit: cover;        /* CRITICAL: Centers and crops the image so it doesn't stretch */
+  width: 100%;             /* Fills the column width */
+  max-width: 250px;        /* Limits max size so it doesn't get too huge */
+  height: auto;            /* Keeps your natural aspect ratio */
   display: block;
   margin-bottom: 20px;
-  border: 3px solid var(--primary-blue); /* Adds a crisp dark blue ring around the photo */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Adds a very soft drop shadow */
+  border: 1px solid #E0E0E0;
 }
 
 i.fa-brands, i.fa-solid {
@@ -160,7 +158,25 @@ div.hiders ul {
 div.hiders li {
     margin-bottom: 12px;
 }
-
+div.background_div {
+  z-index: 0;
+  position: fixed; /* Keeps it anchored while you scroll */
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0.8; /* Adjust this to make the sun brighter or softer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background_div img {
+  width: 100%;
+  max-width: 1200px; /* Keeps the sun from getting too stretched on huge monitors */
+  height: auto;
+  object-fit: contain;
+}
 /* Reviews Section */
 .review-slideshow {
   max-width: 100%;
@@ -199,14 +215,16 @@ div.hiders li {
 /* Responsive design for tablets and mobile devices */
 @media (max-width: 1024px) {
   div.body_text, div.body_text_2, div.body_text_3 {
-      position: relative; 
-      width: 85%; 
-      left: 5%; 
-      top: auto; 
-      margin-top: 20px; 
-      height: auto; 
-      background-color: rgba(255, 255, 255, 0.95); /* More opaque on mobile */
-  }
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: transparent; /* CRITICAL: Allows triangles and sun to show through */
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  box-sizing: border-box; 
+}
   .container {
       height: auto;
       padding-bottom: 50px;
