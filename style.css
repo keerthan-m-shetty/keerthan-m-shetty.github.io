@@ -86,23 +86,24 @@ div.body_text, div.body_text_2, div.body_text_3 {
   padding-left: 2.5%;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
+  box-sizing: border-box; /* CRITICAL: Stops padding from expanding the columns */
 }
 
 div.body_text_2 { /* Left Column */
-  left: 5%;
-  width: 25%;
+  left: 4%;
+  width: 26%;
   top: 1%;
 }
 
 div.body_text { /* Middle Column */
-  left: 35%;
-  width: 32%;
+  left: 33%;
+  width: 38%;
   top: 1%;
 }
 
 div.body_text_3 { /* Right Column */
-  left: 72%;
-  width: 23%;
+  left: 74%;
+  width: 22%;
   top: 1%;
 }
 
