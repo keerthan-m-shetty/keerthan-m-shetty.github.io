@@ -108,11 +108,14 @@ div.body_text_3 { /* Right Column */
 
 /* Left Column Specifics */
 .mephoto {
-  width: 80%;
-  max-width: 180px;
+  width: 160px;             /* Forces a specific width */
+  height: 160px;            /* Forces an equal height for a perfect square */
+  border-radius: 50%;       /* Turns the square into a perfect circle */
+  object-fit: cover;        /* CRITICAL: Centers and crops the image so it doesn't stretch */
   display: block;
   margin-bottom: 20px;
-  border: 1px solid #E0E0E0; /* Subtle border */
+  border: 3px solid var(--primary-blue); /* Adds a crisp dark blue ring around the photo */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Adds a very soft drop shadow */
 }
 
 i.fa-brands, i.fa-solid {
