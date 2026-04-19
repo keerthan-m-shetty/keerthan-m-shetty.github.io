@@ -18,9 +18,9 @@
       <img class="mephoto" id="imageCycle" src="me.JPG" ondragstart="return false;" ondrop="return false;" onerror="this.style.display='none';"/>
       
       <h2>
-        <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty"><i class="fa-brands fa-linkedin"></i></a> |
-        <a target="_blank" href="https://github.com/keerthanshetty"><i class="fa-brands fa-github"></i></a> |
-        <a target="_blank" href="https://huggingface.co/keerthanshetty">🤗</a> |
+        <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty"><i class="fa-brands fa-linkedin"></i></a>
+        <a target="_blank" href="https://github.com/keerthanshetty"><i class="fa-brands fa-github"></i></a>
+        <a target="_blank" href="https://huggingface.co/keerthanshetty">🤗</a>
         <a target="_blank" href="https://hub.knime.com/keerthanshetty"><i class="fa-solid fa-database"></i></a>
       </h2>
       
@@ -28,7 +28,7 @@
       <hr>
       
       <h2>LinkedIn Recommendations</h2>
-      <p>
+      <p style="font-size: 0.9em;">
         Read more on the <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty">Recommendations</a> section of my LinkedIn profile.
       </p>
       
@@ -60,17 +60,15 @@
       <div>
         <p>Highlights at KNIME..</p>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;">
             <ul>          
               <li>
                 In 2022-2026, I worked as a Working Student in the Evangelism & Marketing team. I co-authored and published <b>"explainable AI: Interpreting Machine Learning with XAI"</b>, developing KNIME workflows and blog posts on LIME, SHAP, and Partial Dependence Plots.
               </li>
-              <br>
               <li>
                 Led an end-to-end <b>community platform migration</b> from Discourse to Circle. I developed a KNIME-based pipeline to extract nested replies and metrics via REST APIs, managing media migration via Amazon S3.
               </li>
-              <br>
               <li>
                 Built an automated <b>multi-channel community monitoring system</b> cross-platform (Reddit, Discord, Stack Overflow) using Python and KNIME, routing technical queries to internal Slack channels.
               </li>
@@ -82,17 +80,15 @@
       <div>
         <p>Before KNIME (TCS)..</p>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;">
             <ul> 
               <li>
                 From 2016 to 2022, I was a <b>BI & Data Warehouse Developer</b> at Tata Consultancy Services (India). I developed ETL workflows using Informatica and Oracle SQL/PL/SQL for financial clients.
               </li>
-              <br>
               <li>
                 Led ETL development for Genworth Financial, designing solutions for Moody's ECL and risk models.
               </li>
-              <br>
               <li>
                 Automated processes using Python, VB Scripts, and Appworx — saving $64,000, while training a team of 12 in SQL, Tableau, and Data Warehousing.
               </li>
@@ -107,7 +103,7 @@
       <h2>Coding Projects</h2>
       <div>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;"> 
             <ul>
               <li><a target="_blank" href="https://github.com/keerthanshetty/resume-skill-extractor">resume-skill-extractor</a> - An end-to-end LLM pipeline that extracts skills from job descriptions. Curated 3k+ records, fine-tuned Llama-3-8B using QLoRA, and deployed a merged model via Gradio.</li>
@@ -117,12 +113,11 @@
           </div>
         </fieldset>
       </div>
-      <hr>
 
       <h2>Writing & Media</h2>
       <div>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;"> 
             <ul>
               <li><a target="_blank" href="https://www.knime.com/knimepress/explainable-ai">eXplainable AI: Interpreting Machine Learning with XAI</a> (<i>KNIME Press</i>)</li>
@@ -131,12 +126,11 @@
           </div>
         </fieldset>
       </div>
-      <hr>
 
       <h2>Certifications</h2>
       <div>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;"> 
             <ul>
               <li>
@@ -147,12 +141,11 @@
           </div>
         </fieldset>
       </div>
-      <hr>
 
       <h2>Education</h2>
       <div>
         <fieldset class="majorpoints">
-          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <legend class="majorpointslegend"> &#9658; Expand </legend>
           <div class="hiders" style="display:none;"> 
             <ul>
               <li>
@@ -176,9 +169,9 @@
         $(this).next('.hiders').slideToggle("fast");
         var text = $(this).text();
         if (text.includes("▼")) {
-          $(this).html("&#9658; ...");
+          $(this).html("&#9658; Expand");
         } else {
-          $(this).html("&#9660; ...");
+          $(this).html("&#9660; Collapse");
         }
       });
     });
@@ -205,14 +198,17 @@
     cycleReviews();
     setInterval(cycleReviews, 8000);
 
-    // --- Paolo's Triangle Canvas Background ---
+    // --- Triangle Canvas Background (Dark Blue Theme) ---
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     let width, height, mouseX = 0, mouseY = 0;
     const circles = [];
     const circleRadius = 2.5; 
     const circleCount = 800; 
-    const colorSequence = ['#DF825A', '#E57F55', '#BBD2CE', '#75A0C5', '#9BAAB0', '#8BB2D1'];
+    
+    // Varying shades of dark/slate blue for the particles
+    const colorSequence = ['#003366', '#004080', '#1a5276', '#2980b9', '#3498db', '#5dade2'];
+    
     let colorIndex = 0, transitionProgress = 0, transitionSpeed = 0.002;
 
     function resizeCanvas() {
@@ -231,7 +227,8 @@
         const c1 = hexToRgb(colorSequence[colorIndex]);
         const c2 = hexToRgb(colorSequence[(colorIndex + 1) % colorSequence.length]);
         const intp = interpolateColor(c1, c2, transitionProgress);
-        return `rgba(${intp[0]}, ${intp[1]}, ${intp[2]}, 0.5)`;
+        // Reduced opacity so the dark blue isn't overwhelming
+        return `rgba(${intp[0]}, ${intp[1]}, ${intp[2]}, 0.3)`; 
     }
 
     class Triangle {
