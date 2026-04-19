@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keerthan Shetty | ML Engineer</title>
+  <title>Keerthan Shetty's website</title>
+  
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,270 +13,279 @@
   <canvas id="canvas"></canvas>
 
   <div class="container">
-
+    
     <div class="body_text_2">
-      <img class="mephoto" src="https://avatars.githubusercontent.com/u/keerthan-m-shetty" alt="Keerthan Shetty"/>
+      <img class="mephoto" id="imageCycle" src="me.JPG" ondragstart="return false;" ondrop="return false;" onerror="this.style.display='none';"/>
       
-      <div class="social-icons">
-        <a target="_blank" href="https://www.linkedin.com/in/keerthanmshetty/"><i class="fa-brands fa-linkedin"></i></a>
-        <a target="_blank" href="https://github.com/keerthan-m-shetty"><i class="fa-brands fa-github"></i></a>
-        <a target="_blank" href="https://huggingface.co/k10shetty">🤗</a>
-        <a target="_blank" href="https://hub.knime.com/k10shetty"><i class="fa-solid fa-database"></i></a>
-      </div>
+      <h2>
+        <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty"><i class="fa-brands fa-linkedin"></i></a> |
+        <a target="_blank" href="https://github.com/keerthanshetty"><i class="fa-brands fa-github"></i></a> |
+        <a target="_blank" href="https://huggingface.co/keerthanshetty">🤗</a> |
+        <a target="_blank" href="https://hub.knime.com/keerthanshetty"><i class="fa-solid fa-database"></i></a>
+      </h2>
       
-      <div style="text-align: center; color: #8b949e; font-size: 0.85em;">
-        Last update: April 2026
-      </div>
-      
+      <h3>last update: April 2026</h3>
       <hr>
       
-      <h3 style="margin-top:0;">Recommendations</h3>
-      <p style="font-size: 0.9em; color: #8b949e;">From my <a target="_blank" href="https://www.linkedin.com/in/keerthanmshetty/">LinkedIn profile</a>.</p>
+      <h2>LinkedIn Recommendations</h2>
+      <p>
+        Read more on the <a target="_blank" href="https://www.linkedin.com/in/keerthanshetty">Recommendations</a> section of my LinkedIn profile.
+      </p>
       
       <div id="reviewSlideshow" class="review-slideshow">
-        <div class="review-content" style="opacity: 0;">
+        <div class="review-content" id="reviewContent">
           <div class="review-author">
-            <img src="" alt="Author" id="review-img">
             <div class="review-author-info">
-              <span class="review-author-name" id="review-name"></span>
-              <span class="review-author-role" id="review-role"></span>
+              <span class="review-author-name" id="rev-name"></span><br>
+              <span class="review-author-role" id="rev-role"></span>
             </div>
           </div>
-          <p class="review-text" id="review-text"></p>
+          <p class="review-text" id="rev-text"></p>
         </div>
       </div>
     </div>
 
     <div class="body_text">
-      <h1 style="margin-bottom: 5px;">Keerthan Shetty</h1>
-      <h3 style="margin-top: 0; color: #8b949e;">Machine Learning Engineer // Full-Stack Data Professional</h3>
-      
+      <h1> Keerthan Shetty </h1>
+      <h3>Data Engineer // ML Engineer // AI Enthusiast</h3>
+      <h3>keerthan [at] gmail [dot] com</h3>
+
       <p>
-        <b>Keywords</b>: <i>Machine Learning</i>; <i>Data Engineering</i>; <i>LLMs</i>; <i>KNIME</i>; <i>Python</i>; <i>PyTorch</i>; <i>Docker</i>; <i>XAI</i>...
+        <b>Keywords</b>: <i>machine learning</i>; <i>data engineering</i>; <i>LLMs</i>; <i>Python</i>; <i>PyTorch</i>; <i>KNIME</i>; <i>Docker</i>; <i>ETL</i>; ...
       </p>
       <hr>
 
-      <p><b>TL;DR</b>: I specialize in building intelligent systems and scalable data pipelines. I spent over 4 years at <a target="_blank" href="https://knime.com">KNIME</a> architecting community data migrations, automating analytics workflows, and writing about Explainable AI (XAI). I also build and fine-tune open-source LLMs.</p>
+      <p><b>TL;DR</b>: I work at the intersection of data engineering, machine learning, and community. From designing ETL pipelines to fine-tuning Large Language Models and co-authoring a book on explainable AI, I enjoy making complex data problems tractable.</p>
 
-      <br>
-      <p>Highlights at KNIME (Mar 2022 - Mar 2026)..</p>
-      <fieldset class="majorpoints">
-        <legend class="majorpointslegend"> &#9658; Expand </legend>
-        <div class="hiders" style="display:none;">
-          <ul>          
-            <li>
-              <b>Explainable AI (XAI):</b> Co-authored and published the technical booklet <i>"Explainable AI: Interpreting Machine Learning with XAI."</i> Created a dedicated XAI space developing workflows and authored in-depth blog posts on advanced interpretability methods (LIME, SHAP, PDP).
-            </li>
-            <li>
-              <b>Platform Migration Architecture:</b> Led an end-to-end community platform migration from Discourse to Circle. Developed a custom KNIME/REST API pipeline to extract posts, nested replies, and user engagement metrics, managing media migration via Amazon S3.
-            </li>
-            <li>
-              <b>Cross-Platform Data Pipelines:</b> Built an automated multi-channel community monitoring system using Python and KNIME to aggregate mentions across Reddit, Discord, and Stack Overflow, routing them to Slack for faster response times.
-            </li>
-            <li>
-              <b>Workflow Automation:</b> Designed an automated weekly reporting workflow that aggregated data from multiple sources, reducing manual processing time by ~3 hours per month.
-            </li>
-          </ul>
-        </div>
-      </fieldset>
+      <div>
+        <p>Highlights at KNIME..</p>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;">
+            <ul>          
+              <li>
+                In 2022-2026, I worked as a Working Student in the Evangelism & Marketing team. I co-authored and published <b>"explainable AI: Interpreting Machine Learning with XAI"</b>, developing KNIME workflows and blog posts on LIME, SHAP, and Partial Dependence Plots.
+              </li>
+              <br>
+              <li>
+                Led an end-to-end <b>community platform migration</b> from Discourse to Circle. I developed a KNIME-based pipeline to extract nested replies and metrics via REST APIs, managing media migration via Amazon S3.
+              </li>
+              <br>
+              <li>
+                Built an automated <b>multi-channel community monitoring system</b> cross-platform (Reddit, Discord, Stack Overflow) using Python and KNIME, routing technical queries to internal Slack channels.
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+      </div>
 
-      <br>
-      <p>Independent ML Engineering..</p>
-      <fieldset class="majorpoints">
-        <legend class="majorpointslegend"> &#9658; Expand </legend>
-        <div class="hiders" style="display:none;">
-          <ul> 
-            <li>
-              <b>Resume Skill Extractor (Llama 3 8B):</b> Built an end-to-end LLM pipeline to extract core skills from job descriptions. Curated a 3,000+ dataset via Gemini API, fine-tuned `Meta-Llama-3-8B-Instruct` using QLoRA, and deployed a mathematically merged serverless backend.
-            </li>
-            <li>
-              <b>Docker ML API Hub:</b> Packaged ML environments using Docker and exposed model inference capabilities via REST APIs using FastAPI, allowing seamless integration for front-end applications.
-            </li>
-          </ul>
-        </div>
-      </fieldset>
-    </div>
-
-    <div class="body_text_3">
-      <h2 style="margin-top:0;">Articles & Papers</h2>
-      <fieldset class="majorpoints">
-        <legend class="majorpointslegend"> &#9658; Expand </legend>
-        <div class="hiders" style="display:none;">
-          <ul>
-            <li>
-              <b>Booklet:</b> <a target="_blank" href="https://www.knime.com/knimepress/explainable-ai">Explainable AI: Interpreting Machine Learning with XAI</a> (KNIME Press)
-            </li>
-            <li>
-              <b>Articles:</b> Authored deep-dive technical posts on LIME, SHAP, Shapley Values, and Partial Dependence Plots (PDP) for the KNIME Blog.
-            </li>
-          </ul>
-        </div>
-      </fieldset>
-
-      <hr>
-      <h2>Tech Stack</h2>
-      <div style="text-align: left; margin-top: 10px;">
-        <img src="https://skillicons.dev/icons?i=python,pytorch,tensorflow,sklearn" style="margin-bottom: 5px;"/><br>
-        <img src="https://skillicons.dev/icons?i=postgres,mysql,mongodb,fastapi" style="margin-bottom: 5px;"/><br>
-        <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,gcp" />
+      <div>
+        <p>Before KNIME (TCS)..</p>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;">
+            <ul> 
+              <li>
+                From 2016 to 2022, I was a <b>BI & Data Warehouse Developer</b> at Tata Consultancy Services (India). I developed ETL workflows using Informatica and Oracle SQL/PL/SQL for financial clients.
+              </li>
+              <br>
+              <li>
+                Led ETL development for Genworth Financial, designing solutions for Moody's ECL and risk models.
+              </li>
+              <br>
+              <li>
+                Automated processes using Python, VB Scripts, and Appworx — saving $64,000, while training a team of 12 in SQL, Tableau, and Data Warehousing.
+              </li>
+            </ul>
+          </div>
+        </fieldset>
       </div>
     </div>
 
+    <div class="body_text_3">
+      
+      <h2>Coding Projects</h2>
+      <div>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;"> 
+            <ul>
+              <li><a target="_blank" href="https://github.com/keerthanshetty/resume-skill-extractor">resume-skill-extractor</a> - An end-to-end LLM pipeline that extracts skills from job descriptions. Curated 3k+ records, fine-tuned Llama-3-8B using QLoRA, and deployed a merged model via Gradio.</li>
+              <br>
+              <li><a target="_blank" href="https://github.com/keerthanshetty/docker-ml-api-hub">docker-ml-api-hub</a> - Packaged ML environments using Docker and exposed model inference capabilities via REST APIs using FastAPI.</li>
+            </ul>
+          </div>
+        </fieldset>
+      </div>
+      <hr>
+
+      <h2>Writing & Media</h2>
+      <div>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;"> 
+            <ul>
+              <li><a target="_blank" href="https://www.knime.com/knimepress/explainable-ai">eXplainable AI: Interpreting Machine Learning with XAI</a> (<i>KNIME Press</i>)</li>
+              <li>Blog Series: Advanced Model Interpretability Methods (<i>KNIME Blog</i>)</li>
+            </ul>
+          </div>
+        </fieldset>
+      </div>
+      <hr>
+
+      <h2>Certifications</h2>
+      <div>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;"> 
+            <ul>
+              <li>
+                <h3><a target="_blank" href="#"><i>KNIME Certified Analyst</i></a></h3>
+                <p>Earned via KNIME GmbH.</p>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+      </div>
+      <hr>
+
+      <h2>Education</h2>
+      <div>
+        <fieldset class="majorpoints">
+          <legend class="majorpointslegend"> &#9658; ... </legend>
+          <div class="hiders" style="display:none;"> 
+            <ul>
+              <li>
+                <h3><i>Bachelor of Engineering</i></h3>
+                <p>Computer Science</p>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+      </div>
+
+    </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
   <script>
-    // --- UI Interactions ---
+    // --- Toggles ---
     $(document).ready(function() {
       $('.majorpointslegend').click(function() {
         $(this).next('.hiders').slideToggle("fast");
         var text = $(this).text();
-        $(this).html(text.includes("►") ? "&#9660; Collapse" : "&#9658; Expand");
+        if (text.includes("▼")) {
+          $(this).html("&#9658; ...");
+        } else {
+          $(this).html("&#9660; ...");
+        }
       });
     });
 
-    // --- LinkedIn Reviews Data & Logic ---
-    const reviewsData = [
-      {
-        author: "Schalk Gerber",
-        role: "Community Team Lead at KNIME",
-        content: "Keerthan proved himself to be a very dependable employee and a hard worker with a wide range of professional knowledge. He pitched innovative ideas at company meetings and was valued by managers and colleagues alike for his exceptionally competent manner.",
-        profile_image_link: "https://ui-avatars.com/api/?name=Schalk+Gerber&background=random"
-      },
-      {
-        author: "Katrin Koch",
-        role: "Director HR at KNIME",
-        content: "Of particular value to us was Keerthan's work which was characterized by the highest diligence and care. He was a fast-learner, very careful and cautious about his work, and successfully completed all assigned tasks to our fullest satisfaction.",
-        profile_image_link: "https://ui-avatars.com/api/?name=Katrin+Koch&background=random"
-      }
+    // --- LinkedIn Reviews ---
+    const reviews = [
+      { author: "Schalk Gerber", role: "Community Team Lead, KNIME", content: "Keerthan proved to be a very dependable employee and a hard worker with a wide range of professional knowledge and a high degree of self-initiative and commitment." },
+      { author: "Katrin Koch", role: "Director HR, KNIME", content: "He pitched innovative ideas at company meetings, but also listened to what others had to say. Keerthan was valued by managers and colleagues alike for his friendly and exceptionally competent manner." },
+      { author: "KNIME GmbH", role: "Letter of Recommendation", content: "Of particular value to us was Keerthan's work, characterized by the highest diligence and care. He completed the assigned tasks always to our fullest satisfaction." }
     ];
 
-    let currentReviewIndex = 0;
-    function updateReview() {
-      const reviewContent = document.querySelector('.review-content');
-      reviewContent.style.opacity = 0;
-      
+    let revIdx = 0;
+    function cycleReviews() {
+      const el = document.getElementById('reviewContent');
+      el.style.opacity = 0;
       setTimeout(() => {
-        const review = reviewsData[currentReviewIndex];
-        document.getElementById('review-img').src = review.profile_image_link;
-        document.getElementById('review-name').textContent = review.author;
-        document.getElementById('review-role').textContent = review.role;
-        document.getElementById('review-text').textContent = `"${review.content}"`;
-        
-        reviewContent.style.opacity = 1;
-        currentReviewIndex = (currentReviewIndex + 1) % reviewsData.length;
+        document.getElementById('rev-name').textContent = reviews[revIdx].author;
+        document.getElementById('rev-role').textContent = reviews[revIdx].role;
+        document.getElementById('rev-text').textContent = `"${reviews[revIdx].content}"`;
+        el.style.opacity = 1;
+        revIdx = (revIdx + 1) % reviews.length;
       }, 500);
     }
-    
-    updateReview();
-    setInterval(updateReview, 8000);
+    cycleReviews();
+    setInterval(cycleReviews, 8000);
 
-    // --- Interactive Canvas Background ---
+    // --- Paolo's Triangle Canvas Background ---
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    let width, height;
-    let mouseX = 0, mouseY = 0;
+    let width, height, mouseX = 0, mouseY = 0;
     const circles = [];
     const circleRadius = 2.5; 
-    const circleCount = 600; 
-
-    // Deep techy blues and purples
-    const colorSequence = ['#1f6feb', '#58a6ff', '#8957e5', '#238636', '#2ea043'];
-    let colorIndex = 0;
-    let transitionProgress = 0;
-    const transitionSpeed = 0.005;
+    const circleCount = 800; 
+    const colorSequence = ['#DF825A', '#E57F55', '#BBD2CE', '#75A0C5', '#9BAAB0', '#8BB2D1'];
+    let colorIndex = 0, transitionProgress = 0, transitionSpeed = 0.002;
 
     function resizeCanvas() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
+        width = window.innerWidth; height = window.innerHeight;
+        canvas.width = width; canvas.height = height;
     }
 
     function hexToRgb(hex) {
         const bigint = parseInt(hex.slice(1), 16);
         return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
     }
-
-    function interpolateColor(color1, color2, factor) {
-        const result = color1.slice();
-        for (let i = 0; i < 3; i++) {
-            result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
-        }
-        return result;
+    function interpolateColor(c1, c2, f) {
+        return c1.map((val, i) => Math.round(val + f * (c2[i] - val)));
     }
-
     function getCurrentColor() {
-        const currentColor = hexToRgb(colorSequence[colorIndex]);
-        const nextColor = hexToRgb(colorSequence[(colorIndex + 1) % colorSequence.length]);
-        const interpolated = interpolateColor(currentColor, nextColor, transitionProgress);
-        return `rgba(${interpolated[0]}, ${interpolated[1]}, ${interpolated[2]}, 0.3)`;
+        const c1 = hexToRgb(colorSequence[colorIndex]);
+        const c2 = hexToRgb(colorSequence[(colorIndex + 1) % colorSequence.length]);
+        const intp = interpolateColor(c1, c2, transitionProgress);
+        return `rgba(${intp[0]}, ${intp[1]}, ${intp[2]}, 0.5)`;
     }
 
-    class Particle {
+    class Triangle {
       constructor(x, y) {
-          this.x = x;
-          this.y = y;
-          this.velocity = { x: (Math.random() - 0.5) * 0.8, y: (Math.random() - 0.5) * 0.8 };
-          this.rotation = Math.random() * Math.PI * 2;
+        this.x = x; this.y = y;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.rotation = 0;
       }
       draw() {
-          ctx.save();
-          ctx.translate(this.x, this.y);
-          ctx.rotate(this.rotation);
-          ctx.beginPath();
-          ctx.moveTo(0, -circleRadius * 2);
-          ctx.lineTo(circleRadius * 2, circleRadius * 2);
-          ctx.lineTo(-circleRadius * 2, circleRadius * 2);
-          ctx.closePath();
-          ctx.fillStyle = getCurrentColor();
-          ctx.fill();
-          ctx.restore();
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.beginPath();
+        ctx.moveTo(0, -circleRadius);
+        ctx.lineTo(circleRadius, circleRadius);
+        ctx.lineTo(-circleRadius, circleRadius);
+        ctx.closePath();
+        ctx.fillStyle = getCurrentColor();
+        ctx.fill();
+        ctx.restore();
       }
       update() {
-          this.x += this.velocity.x;
-          this.y += this.velocity.y;
-          this.rotation += 0.01;
-
-          if (this.x > width || this.x < 0) this.velocity.x = -this.velocity.x;
-          if (this.y > height || this.y < 0) this.velocity.y = -this.velocity.y;
-
-          const dx = mouseX - this.x;
-          const dy = mouseY - this.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 120) {
-              this.x -= dx * 0.02;
-              this.y -= dy * 0.02;
-          }
-          this.draw();
+        this.x += this.vx; this.y += this.vy;
+        this.rotation += 0.03;
+        if (this.x > width || this.x < 0) this.vx = -this.vx;
+        if (this.y > height || this.y < 0) this.vy = -this.vy;
+        
+        const dx = mouseX - this.x, dy = mouseY - this.y;
+        if (Math.sqrt(dx*dx + dy*dy) < 80) {
+            this.x -= dx * 0.02; this.y -= dy * 0.02;
+        }
+        this.draw();
       }
     }
 
-    function createParticles() {
-        for (let i = 0; i < circleCount; i++) {
-            circles.push(new Particle(Math.random() * width, Math.random() * height));
-        }
+    function initParticles() {
+      for (let i = 0; i < circleCount; i++) {
+        circles.push(new Triangle(Math.random() * width, Math.random() * height));
+      }
     }
-
     function animate() {
-        ctx.clearRect(0, 0, width, height);
-        circles.forEach(circle => circle.update());
-
-        transitionProgress += transitionSpeed;
-        if (transitionProgress >= 1) {
-            transitionProgress = 0;
-            colorIndex = (colorIndex + 1) % colorSequence.length;
-        }
-        requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, width, height);
+      circles.forEach(c => c.update());
+      transitionProgress += transitionSpeed;
+      if (transitionProgress >= 1) {
+          transitionProgress = 0;
+          colorIndex = (colorIndex + 1) % colorSequence.length;
+      }
+      requestAnimationFrame(animate);
     }
-
     window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
-
-    resizeCanvas();
-    createParticles();
-    animate();
+    window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    resizeCanvas(); initParticles(); animate();
   </script>
 </body>
 </html>
