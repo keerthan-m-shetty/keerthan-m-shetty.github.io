@@ -1,68 +1,20 @@
-/* --- Academic / Raw HTML Theme --- */
+/* --- Academic / Raw HTML Theme (White & Dark Blue) --- */
 
-.majorpointslegend {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-div.hiders {
-  font-size: 90%;
-}
-
-fieldset {
-  border: 0 none;
-  margin-top: 10px;
-}
-
-legend {
-  color: #267CB9;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-legend:hover {
-  color: black;
-  cursor: pointer;
-}
-
-div.body_text, div.body_text_2, div.body_text_3 {
-  height: 100%;
-  position: absolute;
-  z-index: 10;
-  /* Very slight white transparency so it reads clearly over particles */
-  background-color: rgba(255, 255, 255, 0.85);
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-}
-
-div.body_text_2 {
-  left: 5%;
-  width: 25%;
-  top: 1%;
-}
-
-div.body_text {
-  left: 35%;
-  width: 32%;
-  top: 1%;
-}
-
-div.body_text_3 {
-  left: 72%;
-  width: 23%;
-  top: 1%;
+:root {
+  --primary-blue: #003366; /* Deep, professional dark blue */
+  --text-main: #222222;
+  --text-muted: #555555;
+  --bg-color: #FFFFFF;
+  --panel-bg: rgba(255, 255, 255, 0.92); /* Very slight transparency for canvas overlay */
 }
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-size: 15px;
+  line-height: 1.6;
   margin: 0;
-  background-color: #fdfdfd;
-  color: #111;
+  background-color: var(--bg-color);
+  color: var(--text-main);
 }
 
 canvas {
@@ -70,7 +22,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; /* Below content, above body background */
 }
 
 .container {
@@ -81,12 +33,12 @@ canvas {
 }
 
 a {
-  color: #267CB9;
+  color: var(--primary-blue);
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
-  color: blue;
   text-decoration: underline;
 }
 
@@ -94,52 +46,124 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #E0E0E0;
   margin: 1.5em 0;
   padding: 0; 
 }
 
+/* Headings */
 h1 {
-  font-size: 2.2em;
+  font-size: 2.4em;
   margin-bottom: 0.2em;
+  color: #111111;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.3em;
-  margin-top: 1em;
+  font-size: 1.4em;
+  margin-top: 1.2em;
   margin-bottom: 0.5em;
+  color: #111111;
+  border-bottom: 1px solid #EEEEEE;
+  padding-bottom: 4px;
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 1.05em;
   font-weight: normal;
-  color: #444;
+  color: var(--text-muted);
   margin-top: 0.2em;
   margin-bottom: 0.2em;
 }
 
+/* Layout Columns */
+div.body_text, div.body_text_2, div.body_text_3 {
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: var(--panel-bg);
+  padding-right: 2.5%;
+  padding-left: 2.5%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+}
+
+div.body_text_2 { /* Left Column */
+  left: 5%;
+  width: 25%;
+  top: 1%;
+}
+
+div.body_text { /* Middle Column */
+  left: 35%;
+  width: 32%;
+  top: 1%;
+}
+
+div.body_text_3 { /* Right Column */
+  left: 72%;
+  width: 23%;
+  top: 1%;
+}
+
+/* Left Column Specifics */
 .mephoto {
   width: 80%;
-  max-width: 200px;
+  max-width: 180px;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #E0E0E0; /* Subtle border */
 }
 
 i.fa-brands, i.fa-solid {
-  font-size: 1.2em;
-  color: #267CB9;
+  font-size: 1.3em;
+  color: var(--primary-blue);
+  margin-right: 8px;
 }
+
 i.fa-brands:hover, i.fa-solid:hover {
-  color: blue;
+  opacity: 0.8;
+}
+
+/* Collapsible Sections (Fieldsets) */
+.majorpointslegend {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: var(--primary-blue);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.majorpointslegend:hover {
+  text-decoration: underline;
+}
+
+fieldset {
+  border: 0 none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+div.hiders {
+  font-size: 95%;
+  color: var(--text-muted);
+}
+div.hiders ul {
+    padding-left: 20px;
+}
+div.hiders li {
+    margin-bottom: 12px;
 }
 
 /* Reviews Section */
 .review-slideshow {
   max-width: 100%;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 15px;
-  background-color: rgba(240, 240, 240, 0.7);
-  border-left: 4px solid #267CB9;
+  background-color: #F9F9F9;
+  border-left: 4px solid var(--primary-blue);
 }
 
 .review-content {
@@ -152,22 +176,24 @@ i.fa-brands:hover, i.fa-solid:hover {
 
 .review-author-name {
   font-weight: bold;
+  color: var(--primary-blue);
 }
 
 .review-author-role {
   font-size: 0.85em;
-  color: #555;
+  color: var(--text-muted);
 }
 
 .review-text {
   font-style: italic; 
   font-size: 0.95em;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
+  color: var(--text-main);
 }
 
 /* Responsive design for tablets and mobile devices */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   div.body_text, div.body_text_2, div.body_text_3 {
       position: relative; 
       width: 85%; 
@@ -175,6 +201,7 @@ i.fa-brands:hover, i.fa-solid:hover {
       top: auto; 
       margin-top: 20px; 
       height: auto; 
+      background-color: rgba(255, 255, 255, 0.95); /* More opaque on mobile */
   }
   .container {
       height: auto;
