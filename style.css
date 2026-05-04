@@ -49,8 +49,7 @@ canvas {
 /* --- Structural Containers --- */
 .container {
   width: 100%;
-  height: 1250px;
-  height: auto;
+  height: 2200px;
   position: absolute;
   z-index: 10;
 }
