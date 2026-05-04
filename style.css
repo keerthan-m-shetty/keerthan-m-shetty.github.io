@@ -53,7 +53,7 @@ a {
 }
 
 a:hover {
-  color: #0055aa;
+  color: blue;
   text-decoration: underline;
   transition: color 200ms ease;
 }
