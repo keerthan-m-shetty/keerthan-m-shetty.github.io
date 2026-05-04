@@ -28,7 +28,7 @@ body {
 .background-globe {
   position: absolute;
   top: 0%;
-  left: 10%;
+  left: 25%;
   width: 1200px;
   height: 1200px;
   border-radius: 50%;
@@ -68,8 +68,8 @@ div.body_text, div.body_text_2, div.body_text_3 {
 
 /* Column positioning */
 div.body_text_2 { left: 4%; width: 27%; top: 1%; } 
-div.body_text   { left: 35%; width: 25%; top: 1%; } 
-div.body_text_3 { left: 68%; width: 27%; top: 1%; }
+div.body_text   { left: 35%; width: 28%; top: 1%; } 
+div.body_text_3 { left: 67%; width: 27%; top: 1%; }
 
 /* --- Typography --- */
 h1 { 
