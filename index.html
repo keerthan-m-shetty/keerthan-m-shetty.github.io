@@ -215,7 +215,7 @@
 
     async function loadReviews() {
       try {
-        const response = await fetch('Recommendations.json');
+        const response = await fetch('Recommendation_Data/cleaned_data.json');
         if (!response.ok) throw new Error('Network response was not ok');
         
         const data = await response.json();
