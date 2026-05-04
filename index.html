@@ -239,8 +239,8 @@
         const rev = reviews[revIdx];
         
         const imgEl = document.getElementById('rev-img');
-        if (rev.profile_image_link) {
-            imgEl.src = rev.profile_image_link;
+        if (rev.image_link) {
+            imgEl.src = rev.image_link;
             imgEl.style.display = 'block';
         } else {
             imgEl.style.display = 'none';
