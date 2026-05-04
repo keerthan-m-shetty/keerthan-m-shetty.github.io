@@ -127,6 +127,21 @@ fieldset { border: 0 none; margin-top: 10px; padding: 0; }
 div.hiders { font-size: 95%; color: var(--text-muted); }
 div.hiders ul { padding-left: 20px; }
 div.hiders li { margin-bottom: 12px; }
+/* Make certification/section links more visible */
+div.hiders h3 {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+div.hiders h3 a {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+div.hiders p a {
+  color: #0055aa;
+  font-weight: 500;
+}
 
 /* Reviews Section */
 .review-slideshow {
