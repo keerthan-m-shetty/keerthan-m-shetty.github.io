@@ -26,16 +26,17 @@ body {
 
 /* --- Decorative Background Elements --- */
 .background-globe {
-  position: fixed;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  width: 120vw; 
-  height: 120vw;
-  /* Creates large, soft ambient glow centered on page */
-  background: radial-gradient(circle, rgba(0, 51, 102, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-  filter: contrast(150%) brightness(110%); 
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  transform: none;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(210, 180, 140, 0.35) 0%, rgba(230, 200, 160, 0.15) 40%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(40px);
   z-index: 0;
+  pointer-events: none;
 }
 
 canvas {
@@ -64,8 +65,8 @@ div.body_text, div.body_text_2, div.body_text_3 {
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   border-radius: 8px;
-  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
-  mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 
 /* Column positioning */
