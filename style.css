@@ -1,7 +1,7 @@
 /* --- Root Variables & Base Styles --- */
 :root {
   --primary-blue: #003366; 
-  --text-main: #222222;
+  --text-main: #0d1117;
   --text-muted: #555555;
   --bg-color: #FFFFFF;
   --panel-bg: rgba(255, 255, 255, 0.75); 
@@ -17,8 +17,7 @@ body {
   line-height: 1.6;
   margin: 0;
   background-color: var(--bg-color);
-  color: var(--text-main);
-  /* Applies subtle paper texture for depth */
+  color: #0d1117;  
   background-image: url("https://www.transparenttextures.com/patterns/p6-mini.png"); 
   letter-spacing: 0.01em; 
   word-spacing: 0.05em;
@@ -58,14 +57,13 @@ div.body_text, div.body_text_2, div.body_text_3 {
   height: 100%;
   position: absolute;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6); 
   padding-right: 2.5%;
   padding-left: 2.5%;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   border-radius: 8px;
 }
-
 /* Column positioning */
 div.body_text_2 { left: 4%; width: 27%; top: 1%; } 
 div.body_text   { left: 35%; width: 28%; top: 1%; } 
@@ -181,7 +179,7 @@ fieldset { border: 0 none; margin-top: 10px; padding: 0; }
 
 div.hiders { 
   font-size: 95%; 
-  color: var(--text-main);  /* ← this is #222222 (near black) */
+  color: var(--text-main); 
   transition: opacity 0.4s ease; 
 }
 
