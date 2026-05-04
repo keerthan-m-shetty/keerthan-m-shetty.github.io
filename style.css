@@ -66,23 +66,9 @@ div.body_text, div.body_text_2, div.body_text_3 {
 }
 
 /* Column positioning */
-div.body_text {
-    left: 40%;
-    width: 25%;
-    top: 1%;
-}
-
-div.body_text_2 {
-    left: 5%;
-    width: 25%;
-    top: 1%;
-}
-
-div.body_text_3 {
-    left: 75%;
-    width: 25%;
-    top: 1%;
-}
+div.body_text_2 { left: 5%; width: 28%; top: 1%; } 
+div.body_text   { left: 40%; width: 25%; top: 1%; } 
+div.body_text_3 { left: 72%; width: 28%; top: 1%; }
 
 /* --- Typography --- */
 h1 { 
