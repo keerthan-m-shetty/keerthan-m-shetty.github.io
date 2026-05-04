@@ -72,12 +72,12 @@ div.body_text_3 { left: 68%; width: 27%; top: 1%; }
 
 /* --- Typography --- */
 h1 { 
-  font-size: 2.8em; 
-  font-weight: 900; 
+  font-size: 2.2em; 
+  font-weight: 700; 
   margin-bottom: 0.1em; 
   color: #0d1117; 
-  letter-spacing: -0.05em; 
-  line-height: 1.1;
+  letter-spacing: -0.02em; 
+  line-height: 1.2;
 }
 
 h2 { 
