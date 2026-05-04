@@ -1,11 +1,14 @@
-/* --- Academic Theme (White & Dark Blue) --- */
-
+/* --- Root Variables & Base Styles --- */
 :root {
   --primary-blue: #003366; 
   --text-main: #222222;
   --text-muted: #555555;
   --bg-color: #FFFFFF;
-  --panel-bg: rgba(255, 255, 255, 0.75); /* Highly transparent so the globe shows through */
+  --panel-bg: rgba(255, 255, 255, 0.75); 
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,20 +18,24 @@ body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-main);
+  /* Applies subtle paper texture for depth */
+  background-image: url("https://www.transparenttextures.com/patterns/p6-mini.png"); 
+  letter-spacing: 0.01em; 
+  word-spacing: 0.05em;
 }
 
-/* THE CSS GLOBE/SUN EFFECT */
+/* --- Decorative Background Elements --- */
 .background-globe {
   position: fixed;
-  top: 5%;
-  left: 15%;
-  width: 1000px;
-  height: 1000px;
-  border-radius: 50%;
-  /* Increased opacity from 0.08 to 0.25 so the dark blue glow is clearly visible */
-  background: radial-gradient(circle, rgba(0, 51, 102, 0.25) 0%, rgba(0, 51, 102, 0) 70%);
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 120vw; 
+  height: 120vw;
+  /* Creates large, soft ambient glow centered on page */
+  background: radial-gradient(circle, rgba(0, 51, 102, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: contrast(150%) brightness(110%); 
   z-index: 0;
-  pointer-events: none; 
 }
 
 canvas {
@@ -39,11 +46,54 @@ canvas {
   z-index: 1; 
 }
 
+/* --- Structural Containers --- */
 .container {
   width: 100%;
   height: 1250px;
   position: absolute;
   z-index: 10;
+}
+
+div.body_text, div.body_text_2, div.body_text_3 {
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: var(--panel-bg);
+  padding: 1.5% 2.5%;
+  box-sizing: border-box;
+  /* Triggers entrance animation on page load */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Column positioning */
+div.body_text_2 { left: 4%; width: 26%; top: 1%; } 
+div.body_text   { left: 33%; width: 38%; top: 1%; } 
+div.body_text_3 { left: 74%; width: 22%; top: 1%; } 
+
+/* --- Typography --- */
+h1 { 
+  font-size: 2.8em; 
+  font-weight: 900; 
+  margin-bottom: 0.1em; 
+  color: #0d1117; 
+  letter-spacing: -0.05em; 
+  line-height: 1.1;
+}
+
+h2 { 
+  font-size: 1.4em; 
+  margin-top: 1.2em; 
+  margin-bottom: 0.5em; 
+  color: #111111; 
+  border-bottom: 1px solid #EEEEEE; 
+  padding-bottom: 4px; 
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: 300; 
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
 }
 
 a {
@@ -66,82 +116,80 @@ hr {
   margin: 1.5em 0;
 }
 
-h1 { font-size: 2.4em; margin-bottom: 0.2em; color: #111111; letter-spacing: -0.02em; }
-h2 { font-size: 1.4em; margin-top: 1.2em; margin-bottom: 0.5em; color: #111111; border-bottom: 1px solid #EEEEEE; padding-bottom: 4px; }
-h3 { font-size: 1.05em; font-weight: normal; color: var(--text-muted); margin-top: 0.2em; margin-bottom: 0.2em; }
-
-/* Layout Columns */
-div.body_text, div.body_text_2, div.body_text_3 {
-  height: 100%;
-  position: absolute;
-  z-index: 10;
-  background-color: var(--panel-bg);
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
-  box-sizing: border-box;
-}
-
-div.body_text_2 { left: 4%; width: 26%; top: 1%; } /* Left */
-div.body_text { left: 33%; width: 38%; top: 1%; }  /* Middle */
-div.body_text_3 { left: 74%; width: 22%; top: 1%; } /* Right */
-
-/* Profile Photo (Reverted to Paolo's original rectangle format) */
+/* --- Media and Profile Elements --- */
 .mephoto {
   width: 100%;
   max-width: 220px;
   display: block;
   margin-bottom: 15px;
-  border: 1px solid #E0E0E0; /* Very subtle border so it doesn't blend into the white background */
+  border-radius: 6px; 
+  /* Lift effect using soft shadow instead of borders */
+  box-shadow: 0 15px 35px rgba(0, 51, 102, 0.12); 
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-/* Social Link Images */
+.mephoto:hover {
+  /* Dynamic bounce and scale on interaction */
+  transform: translateY(-8px) scale(1.02); 
+  box-shadow: 0 20px 40px rgba(0, 51, 102, 0.2);
+}
+
 .social-links {
   font-size: 1.2em;
-  color: #999; /* Color for the | separator */
-  margin-top: 10px;
-  margin-bottom: 10px;
+  color: #999; 
+  margin: 10px 0;
 }
 
 .social-links img {
-  height: 28px; /* Sizes the images perfectly */
+  height: 28px;
   vertical-align: middle;
   margin: 0 4px;
-  transition: transform 0.2s ease;
+  filter: grayscale(20%); 
+  transition: all 0.3s ease;
 }
 
 .social-links img:hover {
-  transform: scale(1.1); /* Adds a subtle zoom when hovered */
+  filter: grayscale(0%);
+  transform: scale(1.2) rotate(5deg); 
 }
 
-/* Collapsible Sections */
+/* --- Collapsible and Hidden Content --- */
+fieldset { border: 0 none; margin-top: 10px; padding: 0; }
+
 .majorpointslegend {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-left: -12px;
+  border-radius: 6px;
+  color: var(--primary-blue);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
-  color: var(--primary-blue);
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.majorpointslegend:hover { text-decoration: underline; }
-fieldset { border: 0 none; margin-top: 10px; padding: 0; }
-div.hiders { font-size: 95%; color: var(--text-muted); }
+.majorpointslegend:hover { 
+  background-color: rgba(0, 51, 102, 0.08); 
+  color: #0056b3;
+  transform: translateX(5px); 
+}
+
+div.hiders { 
+  font-size: 95%; 
+  color: var(--text-muted); 
+  /* Fades in content when revealed by JS */
+  transition: opacity 0.4s ease; 
+}
+
 div.hiders ul { padding-left: 20px; }
 div.hiders li { margin-bottom: 12px; }
-/* Make certification/section links more visible */
-div.hiders h3 {
+
+/* Highlight section links */
+div.hiders h3, div.hiders h3 a {
   color: var(--primary-blue);
   font-weight: 600;
-}
-
-div.hiders h3 a {
-  color: var(--primary-blue);
-  font-weight: 600;
-}
-
-div.hiders h3 a:hover {
-  color: #1a6fd4;
 }
 
 div.hiders p a {
@@ -149,10 +197,13 @@ div.hiders p a {
   font-weight: 500;
 }
 
+/* Hover states for section links */
+div.hiders h3 a:hover,
 div.hiders p a:hover {
   color: #1a6fd4;
 }
-/* Reviews Section */
+
+/* --- Review Slideshow --- */
 .review-slideshow {
   max-width: 100%;
   margin: 15px 0;
@@ -160,19 +211,47 @@ div.hiders p a:hover {
   background-color: #F9F9F9;
   border-left: 4px solid var(--primary-blue);
 }
+
 .review-content { transition: opacity 0.5s ease-in-out; }
 .review-author { margin-bottom: 8px; display: flex; align-items: center;}
-.review-author img { width: 45px; height: 45px; border-radius: 50%; margin-right: 10px; border: 1px solid #ccc; object-fit: cover;}
+
+.review-author img { 
+  width: 45px; 
+  height: 45px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+  border: 1px solid #ccc; 
+  object-fit: cover;
+}
+
 .review-author-info { display: flex; flex-direction: column; }
 .review-author-name { font-weight: bold; color: var(--primary-blue); }
 .review-author-role { font-size: 0.85em; color: var(--text-muted); }
 .review-text { font-style: italic; font-size: 0.95em; line-height: 1.5; margin: 0; color: var(--text-main); }
 
+/* --- Responsive Layout --- */
 @media (max-width: 1024px) {
   div.body_text, div.body_text_2, div.body_text_3 {
-      position: relative; width: 90%; left: 5%; top: auto; margin-top: 20px; height: auto; 
-      background-color: rgba(255, 255, 255, 0.95);
+    position: relative; 
+    width: 90%; 
+    left: 5%; 
+    top: auto; 
+    margin-top: 20px; 
+    height: auto; 
+    background-color: rgba(255, 255, 255, 0.95);
   }
   .container { height: auto; padding-bottom: 50px; }
-  .background-globe { display: none; } /* Hide on mobile to save space */
+  .background-globe { display: none; } 
+}
+
+/* --- Keyframes --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
