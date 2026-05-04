@@ -50,12 +50,12 @@ a {
   color: var(--primary-blue);
   text-decoration: none;
   font-weight: 500;
+  transition: color 200ms ease;
 }
 
 a:hover {
-  color: blue;
+  color: #1a6fd4;
   text-decoration: underline;
-  transition: color 200ms ease;
 }
 
 hr {
@@ -140,11 +140,18 @@ div.hiders h3 a {
   font-weight: 600;
 }
 
+div.hiders h3 a:hover {
+  color: #1a6fd4;
+}
+
 div.hiders p a {
   color: #0055aa;
   font-weight: 500;
 }
 
+div.hiders p a:hover {
+  color: #1a6fd4;
+}
 /* Reviews Section */
 .review-slideshow {
   max-width: 100%;
