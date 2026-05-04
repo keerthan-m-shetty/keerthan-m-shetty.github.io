@@ -58,12 +58,14 @@ div.body_text, div.body_text_2, div.body_text_3 {
   height: 100%;
   position: absolute;
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.15);
   padding-right: 2.5%;
   padding-left: 2.5%;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   border-radius: 8px;
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 95%);
 }
 
 /* Column positioning */
