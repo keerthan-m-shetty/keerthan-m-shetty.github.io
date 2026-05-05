@@ -22,16 +22,30 @@ body {
   word-spacing: 0.05em;
 }
 
-/* --- Decorative Background Elements --- */
 .background-globe {
-  position: absolute;
-  top: 0%;
-  left: 15%;
-  width: 1200px;
-  height: 1200px;
+  position: fixed; 
+  top: 50%;
+  left: 20%; /* Positioned behind your profile photo */
+  transform: translate(-50%, -50%);
+  width: 1400px; 
+  height: 1400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 51, 102, 0.3) 0%, rgba(0, 51, 102, 0.08) 50%, rgba(255, 255, 255, 0) 70%);
-  filter: blur(40px);
+  
+  /* The Sun Effect: A prominent center glow + distinct, darker rays */
+  background: 
+    /* 1. The glowing center core */
+    radial-gradient(circle at center, rgba(0, 51, 102, 0.25) 0%, transparent 60%),
+    /* 2. The radiating sunbeams */
+    repeating-conic-gradient(
+      from 0deg, 
+      rgba(0, 51, 102, 0.12) 0deg 4deg,   /* Darker, visible blue ray */
+      transparent 4deg 8deg             /* Empty space between rays */
+    );
+    
+  /* Fades the entire sun smoothly into the page so it doesn't have a hard edge */
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 65%);
+  mask-image: radial-gradient(circle, black 30%, transparent 65%);
+  
   z-index: 0;
   pointer-events: none;
 }
