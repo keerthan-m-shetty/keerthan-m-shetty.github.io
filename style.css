@@ -23,24 +23,25 @@ body {
 }
 
 .background-globe {
-  position: fixed; /* Keeps it centered in the viewport, regardless of scrolling */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px; /* Smaller footprint so it doesn't bleed everywhere */
-  height: 900px;
+  position: absolute; /* Pins the globe to the top of the webpage so it scrolls away */
+  top: -250px; /* Pulls the center of the globe upwards */
+  left: 5%; /* Keeps it aligned toward the left, behind your profile */
+  width: 1400px; 
+  height: 1400px;
   border-radius: 50%;
   
-  /* A dark core that smoothly and quickly fades to transparent */
+  /* 
+    The fix: Fading to 'transparent 50%' ensures the color disappears 
+    completely BEFORE it hits the physical edge of the 1400px box. 
+  */
   background: radial-gradient(
     circle, 
-    rgba(0, 51, 102, 0.35) 0%,     /* Darker, visible blue core */
-    rgba(0, 51, 102, 0.15) 35%,    /* Smooth transition */
-    rgba(0, 51, 102, 0.05) 55%,    /* Soft outer edge */
-    transparent 70%                /* Hard stop to transparent - prevents bleeding down! */
+    rgba(0, 51, 102, 0.40) 0%,     /* Dark, prominent blue core */
+    rgba(0, 51, 102, 0.15) 20%,    /* Smooth transition */
+    rgba(0, 51, 102, 0.04) 35%,    /* Soft, faint outer edge */
+    transparent 50%                /* Absolute invisible stop, preventing cut-offs */
   );
   
-  /* No filter: blur() needed! This keeps your page loading blazing fast */
   z-index: 0;
   pointer-events: none;
 }
