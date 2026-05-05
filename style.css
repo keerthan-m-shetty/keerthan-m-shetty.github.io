@@ -18,41 +18,20 @@ body {
   margin: 0;
   background-color: var(--bg-color);
   color: #0d1117;  
-  background-image: url("https://www.transparenttextures.com/patterns/p6-mini.png"); 
   letter-spacing: 0.01em; 
   word-spacing: 0.05em;
 }
 
+/* --- Decorative Background Elements --- */
 .background-globe {
-  position: fixed; /* Fixed keeps it anchored while scrolling */
-  top: 50%;
-  left: 40%; /* Shifted slightly left to match Paolo's alignment */
-  transform: translate(-50%, -50%);
-  width: 1400px; /* Made slightly larger to cover more background */
-  height: 1400px;
+  position: absolute;
+  top: 0%;
+  left: 15%;
+  width: 1200px;
+  height: 1200px;
   border-radius: 50%;
-  
-  /* Stacking two offset repeating gradients creates the intersecting "scribble" lines */
-  background: 
-    repeating-radial-gradient(
-      circle at 45% 50%, 
-      transparent, 
-      transparent 12px, 
-      rgba(0, 51, 102, 0.06) 13px, 
-      rgba(0, 51, 102, 0.06) 14px
-    ),
-    repeating-radial-gradient(
-      circle at 55% 50%, 
-      transparent, 
-      transparent 12px, 
-      rgba(0, 51, 102, 0.04) 13px, 
-      rgba(0, 51, 102, 0.04) 14px
-    );
-    
-  /* This masks the harsh outer edges, making it fade beautifully into the white background */
-  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 65%);
-  mask-image: radial-gradient(circle, black 30%, transparent 65%);
-  
+  background: radial-gradient(circle, rgba(0, 51, 102, 0.3) 0%, rgba(0, 51, 102, 0.08) 50%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(40px);
   z-index: 0;
   pointer-events: none;
 }
