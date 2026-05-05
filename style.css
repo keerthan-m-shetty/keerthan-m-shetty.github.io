@@ -23,29 +23,24 @@ body {
 }
 
 .background-globe {
-  position: fixed; 
+  position: fixed; /* Keeps it centered in the viewport, regardless of scrolling */
   top: 50%;
-  left: 20%; /* Positioned behind your profile photo */
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 1400px; 
-  height: 1400px;
+  width: 900px; /* Smaller footprint so it doesn't bleed everywhere */
+  height: 900px;
   border-radius: 50%;
   
-  /* The Sun Effect: A prominent center glow + distinct, darker rays */
-  background: 
-    /* 1. The glowing center core */
-    radial-gradient(circle at center, rgba(0, 51, 102, 0.25) 0%, transparent 60%),
-    /* 2. The radiating sunbeams */
-    repeating-conic-gradient(
-      from 0deg, 
-      rgba(0, 51, 102, 0.12) 0deg 4deg,   /* Darker, visible blue ray */
-      transparent 4deg 8deg             /* Empty space between rays */
-    );
-    
-  /* Fades the entire sun smoothly into the page so it doesn't have a hard edge */
-  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 65%);
-  mask-image: radial-gradient(circle, black 30%, transparent 65%);
+  /* A dark core that smoothly and quickly fades to transparent */
+  background: radial-gradient(
+    circle, 
+    rgba(0, 51, 102, 0.35) 0%,     /* Darker, visible blue core */
+    rgba(0, 51, 102, 0.15) 35%,    /* Smooth transition */
+    rgba(0, 51, 102, 0.05) 55%,    /* Soft outer edge */
+    transparent 70%                /* Hard stop to transparent - prevents bleeding down! */
+  );
   
+  /* No filter: blur() needed! This keeps your page loading blazing fast */
   z-index: 0;
   pointer-events: none;
 }
