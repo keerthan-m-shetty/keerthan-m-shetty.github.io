@@ -32,9 +32,7 @@ body {
   z-index: 0;         /* Keeps it behind the main content */
   pointer-events: none; /* Allows clicks to pass through to links/text */
   overflow: hidden;
-  border-radius: 50%;
-  /* Fallback gradient that appears instantly while images load */
-  background: radial-gradient(circle, rgba(122, 174, 217, 0.4) 0%, rgba(122, 174, 217, 0.1) 40%, transparent 70%);
+  border-radius: 50%; 
 }
 
 /* Base styling for the crossfading images */

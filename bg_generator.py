@@ -35,7 +35,7 @@ def make_scribble_circle(seed: int, line_count=120, points_per_line=360):
     return x_lines, y_lines
 
 
-for i in range(0, 2):
+for i in range(30, 40):
     x_lines, y_lines = make_scribble_circle(i, line_count=2000, points_per_line=320)
 
     plt.figure(figsize=(8, 8))
