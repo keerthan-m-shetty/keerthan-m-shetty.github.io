@@ -22,28 +22,42 @@ body {
   word-spacing: 0.05em;
 }
 
-.background-globe {
-  position: absolute; /* Pins the globe to the top of the webpage so it scrolls away */
-  top: -250px; /* Pulls the center of the globe upwards */
-  left: 5%; /* Keeps it aligned toward the left, behind your profile */
+/* --- Animated Background Container --- */
+.animated-bg-container {
+  position: absolute; /* Anchors it to the top so it scrolls away */
+  top: -250px;        /* Pulls the center of the globe upwards */
+  left: 5%;           /* Aligns it behind the profile photo */
   width: 1400px; 
   height: 1400px;
-  border-radius: 50%;
-  
-  /* 
-    The fix: Fading to 'transparent 50%' ensures the color disappears 
-    completely BEFORE it hits the physical edge of the 1400px box. 
-  */
-  background: radial-gradient(
-    circle, 
-    rgba(0, 51, 102, 0.40) 0%,     /* Dark, prominent blue core */
-    rgba(0, 51, 102, 0.15) 20%,    /* Smooth transition */
-    rgba(0, 51, 102, 0.04) 35%,    /* Soft, faint outer edge */
-    transparent 50%                /* Absolute invisible stop, preventing cut-offs */
-  );
-  
-  z-index: 0;
-  pointer-events: none;
+  z-index: 0;         /* Keeps it behind the main content */
+  pointer-events: none; /* Allows clicks to pass through to links/text */
+  overflow: hidden;
+  border-radius: 50%; 
+}
+
+/* Base styling for the crossfading images */
+.animated-bg-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 4s ease-in-out; /* Handles the smooth crossfade */
+}
+
+#bg-layer-top {
+  z-index: 2;
+  opacity: 1; 
+}
+
+#bg-layer-bottom {
+  z-index: 1;
+}
+
+/* Class toggled by JavaScript to trigger the fade */
+.fade-out {
+  opacity: 0 !important; 
 }
 
 canvas {
@@ -67,12 +81,11 @@ div.body_text, div.body_text_2, div.body_text_3 {
   position: absolute;
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.6); 
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
+  padding: 1.5% 2.5%;
   border-radius: 8px;
+  box-sizing: border-box;
 }
+
 /* Column positioning */
 div.body_text_2 { left: 4%; width: 27%; top: 1%; } 
 div.body_text   { left: 35%; width: 28%; top: 1%; } 
@@ -126,20 +139,18 @@ hr {
   margin: 1.5em 0;
 }
 
-
+/* --- Media Elements --- */
 .mephoto {
   width: 100%;
   max-width: 280px;
   display: block;
   margin-bottom: 15px;
   border-radius: 6px; 
-  /* Lift effect using soft shadow instead of borders */
   box-shadow: 0 15px 35px rgba(0, 51, 102, 0.12); 
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .mephoto:hover {
-  /* Dynamic bounce and scale on interaction */
   transform: translateY(-8px) scale(1.02); 
   box-shadow: 0 20px 40px rgba(0, 51, 102, 0.2);
 }
@@ -163,7 +174,7 @@ hr {
   transform: scale(1.2) rotate(5deg); 
 }
 
-/* --- Collapsible and Hidden Content --- */
+/* --- Collapsible Sections --- */
 fieldset { border: 0 none; margin-top: 10px; padding: 0; }
 
 .majorpointslegend {
@@ -195,7 +206,7 @@ div.hiders {
 div.hiders ul { padding-left: 20px; }
 div.hiders li { margin-bottom: 12px; }
 
-/* Highlight section links */
+/* Section Link Highlighting */
 div.hiders h3, div.hiders h3 a {
   color: var(--primary-blue);
   font-weight: 600;
@@ -206,7 +217,6 @@ div.hiders p a {
   font-weight: 500;
 }
 
-/* Hover states for section links */
 div.hiders h3 a:hover,
 div.hiders p a:hover {
   color: #1a6fd4;
@@ -250,5 +260,23 @@ div.hiders p a:hover {
     background-color: rgba(255, 255, 255, 0.95);
   }
   .container { height: auto; padding-bottom: 50px; }
-  .background-globe { display: none; } 
+  .animated-bg-container { display: none; } 
+}
+
+/* --- Legacy Content (Hidden by Media Hack) --- */
+@media (max-width: 0px) {
+  /* 
+     This contains the old radial-gradient logic.
+     It is effectively disabled but kept for reference.
+  */
+  .background-globe {
+    position: absolute;
+    top: -250px;
+    left: 5%;
+    width: 1400px;
+    height: 1400px;
+    background: radial-gradient(circle, rgba(0, 51, 102, 0.40) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+  }
 }

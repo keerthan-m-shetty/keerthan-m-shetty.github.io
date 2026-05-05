@@ -14,6 +14,13 @@
 
   <canvas id="canvas"></canvas>
 
+  <div class="animated-bg-container">
+    <!-- Top image that will fade in and out -->
+    <img id="bg-layer-top" src="media/bg_spirograph/random_0.png" alt="Background Animation" />
+    <!-- Bottom image that sits underneath -->
+    <img id="bg-layer-bottom" src="media/bg_spirograph/random_1.png" alt="" />
+  </div>
+
   <div class="container">
     
     <div class="body_text_2">
@@ -355,5 +362,9 @@
     window.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
     resizeCanvas(); initParticles(); animate();
   </script>
+
+<!-- Link to your external JavaScript file -->
+<script src="js/background.js"></script>
+
 </body>
 </html>
